@@ -7,3 +7,11 @@ Circular carousel for your next [react-native](https://github.com/facebook/react
 ## Demo
 
 <img src="https://raw.githubusercontent.com/luisfcofv/react-native-lfcarousel/master/example.gif?" alt="Demo" width="320" height="568" />
+
+## Install
+
+```sh
+npm install react-native-lfcarousel --save
+```
+
+[Full example code](example/)
