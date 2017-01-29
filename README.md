@@ -15,3 +15,38 @@ npm install react-native-lfcarousel --save
 ```
 
 [Full example code](example/)
+
+## Usage
+```
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import Carousel from 'react-native-lfcarousel';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
+function App() {
+  return (
+    <Carousel
+      style={styles.container}
+      speed={2000}
+      pagerColor="#000"
+      activePagerColor="#fff"
+    >
+      <View style={{ flex: 1, backgroundColor: 'red' }} />
+      <View style={{ flex: 1, backgroundColor: 'green' }} />
+      <View style={{ flex: 1, backgroundColor: 'blue' }} />
+    </Carousel>
+  );
+}
+
+export default App;
+
+```
+
+## License
+
+react-native-lfcarousel is licensed under the [MIT License](LICENSE).
