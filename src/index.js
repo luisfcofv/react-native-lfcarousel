@@ -56,7 +56,7 @@ class Carousel extends Component {
         const currentPage = -1;
         this.scrollSpring.setCurrentValue((currentPage + 1) * this.state.width);
         this.released = true;
-        this.movePage(currentPage);
+        this.movePage(currentPage, false);
       }, this.props.speed);
     }
   }
@@ -90,7 +90,7 @@ class Carousel extends Component {
           this.scrollSpring.setCurrentValue((currentPage + 1) * this.state.width);
         }
 
-        this.movePage(currentPage);
+        this.movePage(currentPage, false);
       }, this.props.speed);
     }
   }
@@ -151,13 +151,12 @@ class Carousel extends Component {
       }
     }
 
-    this.movePage(currentPage);
+    this.movePage(currentPage, true);
   }
 
-  movePage(currentPage: number) {
+  movePage(currentPage: number, manualChange: boolean) {
     this.previousPage = currentPage;
     this.scrollSpring.setEndValue(currentPage * this.state.width);
-
     this.currentPage = currentPage * -1 +1;
 
     if (this.currentPage > this.props.children.length) {
@@ -167,7 +166,7 @@ class Carousel extends Component {
     this.setState({ currentPage: this.currentPage });
 
     if (this.props.onChangePage) {
-      this.props.onChangePage(this.currentPage);
+      this.props.onChangePage(this.currentPage, manualChange);
     }
   }
 
