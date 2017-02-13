@@ -28,7 +28,6 @@ class Carousel extends Component {
 
   state = {
     currentPage: 1,
-    manualChange: false,
     width: 0,
     height: 0,
   };
@@ -158,17 +157,16 @@ class Carousel extends Component {
   movePage(currentPage: number, manualChange: boolean) {
     this.previousPage = currentPage;
     this.scrollSpring.setEndValue(currentPage * this.state.width);
-    this.manualChange = manualChange;
     this.currentPage = currentPage * -1 +1;
 
     if (this.currentPage > this.props.children.length) {
       this.currentPage = 1;
     }
 
-    this.setState({ currentPage: this.currentPage, manualChange: this.manualChange });
+    this.setState({ currentPage: this.currentPage });
 
     if (this.props.onChangePage) {
-      this.props.onChangePage(this.currentPage, this.manualChange);
+      this.props.onChangePage(this.currentPage, manualChange);
     }
   }
 
