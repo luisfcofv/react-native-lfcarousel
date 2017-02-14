@@ -13,6 +13,8 @@ function getPagerIndicatorStyle(color, pagerMargin, pagerSize) {
   return {
     backgroundColor: color,
     borderRadius: pagerSize / 2,
+    borderWidth: 1,
+    borderColor: '#fff',
     height: pagerSize,
     margin: pagerMargin,
     width: pagerSize,
